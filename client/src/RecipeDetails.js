@@ -144,7 +144,6 @@ const RecipeDetails = () => {
         setRating(null);
     }
     const navigate = useNavigate();
-    console.log(comments)
     return (
         <Wrapper>
             {

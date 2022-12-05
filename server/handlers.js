@@ -192,7 +192,6 @@ const addRecipe = async (req, res) => {
 
 const getUserRecipe =  async (req, res) => {
     const {id} = req.params;
-    // console.log(id)
     const client = new MongoClient(MONGO_URI, options);
     try {
         await client.connect();
@@ -235,7 +234,6 @@ const updateRecipe = async (req, res) => {
 
 const deleteRecipe = async (req, res) => {
     const {_id} = req.body;
-    console.log(req.body)
     const client = new MongoClient(MONGO_URI, options);
     try {
         await client.connect();
@@ -246,7 +244,6 @@ const deleteRecipe = async (req, res) => {
                 creations: {_id: _id}
             }
         })
-        console.log(user[0]._id)
         res.status(200).json({status: 200, message: "Recipe successfully deleted", data: _id})
         client.close();
     }

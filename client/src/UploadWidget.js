@@ -6,12 +6,10 @@ const UploadWidget = () => {
     const widgetRef = useRef();
     useEffect(() => {
         cloudinaryRef.current = window.cloudinary;
-        console.log(cloudinaryRef.current)
         widgetRef.current = cloudinaryRef.current.createUploadWidget({
             cloudName: "dhgzfmj7s",
             uploadPreset: "w6zi50mf"
         }, (error, result) => {
-            console.log(result)
         })
     }, [])
     return (
